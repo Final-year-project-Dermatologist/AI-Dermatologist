@@ -27,6 +27,11 @@ function App() {
         <Route path='/Home' element={<Home/>}/>
         <Route path='/Upload' element={<Upload/>}/>
         <Route path='/Listing' element={<Listing/>}/>
+        <Route path='/chat' element={<Chat/>}/>
+        <Route path='/create-profile' element={<Profilecreation/>}/>
+        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/book-appointment' element={<Bookappointment/>}/>
+
       </Routes>
 
 
