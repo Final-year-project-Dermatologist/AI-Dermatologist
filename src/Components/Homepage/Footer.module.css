@@ -1,0 +1,66 @@
+.footer {
+    background-color: #C1E9FE;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 80px;
+  }
+  
+  .footerSection{
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+  }
+  
+  .footerSection h2, 
+  .footerSection h3 {
+    color: #1a237e;
+    margin-bottom: 15px;
+    font-size: 24px; /* <<< same size for h2 and h3 */
+    font-weight: bold; /* <<< make them bold */
+  }
+  
+  .highlight {
+    color: #f26b3a;
+  }
+  
+  .footerSection p {
+    color: #757575;
+    margin-top: 0;
+  }
+  
+  .footerSection ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footerSection ul li {
+    margin-bottom: 10px;
+    color: #757575;
+  }
+  
+  /* Only Quick Links clickable */
+  .clickableList li {
+    cursor: pointer;
+  }
+  
+  .clickableList li:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dermatology Conditions not clickable */
+  .nonClickableList li {
+    cursor: default;
+    text-decoration: none;
+  }
+  .footerSection ul li a {
+    text-decoration: none;
+    color: #757575;
+  }
+  
+  .footerSection ul li a:hover {
+    text-decoration: underline;
+  }
+  

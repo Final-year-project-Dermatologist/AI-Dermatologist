@@ -1,0 +1,107 @@
+.logo {
+    width: 155px;
+    height: 70px;
+    border: 2px solid #e96f51;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #212C67;
+    font-weight: bold;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    color: #212C67;
+    font-size: 50px;
+}
+
+.selectionbox {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+}
+
+.selectionbox>div {
+   padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: flex-start;
+    border-radius: 20px;
+    width: 410px;
+    height: 260px;
+    border: 4px solid #212C67;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+}
+
+.selectionbox>div>h2{
+    font-weight: normal;
+}
+
+.container>button{
+    margin-top: 40px;
+    width: 260px;
+    height: 70px;
+    background-color: #4836CE;
+    font-size: 20px;
+    color: white;
+    border-radius: 25px;
+    border: 2px solid #4836CE;
+}
+
+  
+  .mylink {
+    text-decoration: none;
+    margin-top: 20px;
+  }
+  
+  .mylink span:first-child {
+    color: #212C67;
+  }
+  
+  .mylink span:last-child {
+    color: green;
+  }
+  
+  .selectionCard {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-radius: 20px;
+    width: 410px;
+    height: 260px;
+    border: 4px solid #C1E9FE;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  
+  }
+  
+  .selectionCard:hover {
+    border: 4px solid #3C87C7;
+    background-color: #3C87C7; 
+  
+  }
+
+  .selectionCard:hover h2 {
+    color: white;
+  }
+  
+  

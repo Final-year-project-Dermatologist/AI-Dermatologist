@@ -1,0 +1,164 @@
+.container {
+   
+    /* text-align: center; */
+    margin-top:100px;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 200px;
+  }
+  
+  .container h1 {
+    font-size: 40px;
+    color: #22204D;
+    text-align: left;
+  }
+  
+  .filters {
+  
+    margin: 20px 0;
+  }
+  
+  .filters button {
+ 
+    font-size: 16px;
+    font-weight: 600;
+    color: #000066;
+    margin: 5px;
+    padding: 10px 15px;
+    border: 1px solid #22204D;
+    border-radius: 20px;
+    background-color: white;
+    color: #22204D;
+    cursor: pointer;
+  }
+
+  .filters button:hover{
+    background-color: #22204D;
+    color: white;
+  }
+  .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.3);
+    background-color: #F1F1F1;
+  }
+  
+  .info {
+    display: flex;
+    align-items: center;
+    text-align: left;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-top: -140px;
+  }
+  
+  
+  .verified {
+    font-size: 13px;
+    color: #30850C;
+    font-size: 12px;
+  }
+  
+  .meta {
+    display: flex;
+    gap: 40px;
+    margin-top: 5px;
+  }
+  .metaBlock {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .fees {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .book {
+    font-size:17px;
+    width: 220px;
+    height: 50px;
+    background-color: #35CF63;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .book:hover{
+    background-color: white;
+    color: #22204D;
+   
+  }
+  .view {
+    font-size: 17px;
+    height: 50px;
+    background-color: #35CF63;
+    background-color: #22204D;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .view:hover{
+    background-color: white;
+    color: #22204D;
+  }
+  .loadMore {
+    width: 480px;
+    height: 50px;
+    margin: 30px auto;
+    padding: 12px 30px;
+    border-radius: 30px;
+    border: 1px solid #222F88;
+    background-color: #CED4E5;
+    color: #5C5C5C;
+    cursor: pointer;
+  }
+  
+  .metaBlock p {
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .metaBlock strong {
+    margin-top: 2px; /* Small space */
+    font-size: 16px;
+  }
+
+  .feesBox {
+    margin-top: 12px;
+    padding: 8px 16px;
+    background-color: white;
+    border: 1px solid #15137D;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 500;
+    color: #222;
+  }
+  
+  .loadMore:hover {
+    background-color: #B0B9D1; /* or any light variant */
+    color: #222; /* or something darker for contrast */
+    border: 1px solid #222F88; /* keep border consistent */
+  }
+  

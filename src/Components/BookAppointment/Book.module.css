@@ -1,0 +1,130 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  } */
+  
+  .appointmentpage {
+    margin-top: 120px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .doctorcard {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    width: 500px;
+    margin-bottom: 30px;
+    border: 2px solid rgb(31, 31, 90);
+  }
+  
+  .avatar {
+    background-color: #ffd966;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-image: url('https://cdn-icons-png.flaticon.com/512/2922/2922510.png');
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .doctorinfo h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+  }
+  
+  .doctorinfo p {
+    margin: 2px 0;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .fee {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .slotselector {
+    background-color: #fff;
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    border: 2px solid rgb(31, 31, 90);
+  }
+  
+  .datetabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .arrow {
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .tabs {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    justify-content: center;
+  }
+  
+  .tab {
+    padding: 4px 10px;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .tabactive {
+    color: orange;
+    font-weight: bold;
+    border-bottom: 2px solid orange;
+  }
+  
+  .slots h4 {
+    margin: 15px 0 10px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .slotgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  
+  .slot {
+    background-color: #72cdff;
+    color: white;
+    padding: 12px 0;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid #3ab0ff; /* Blue border */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.15s ease;
+  }
+  
+  .slot:hover {
+    transform: scale(1.05);
+  }
+  
+  

@@ -1,0 +1,255 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  } */
+  
+  .chatContainer {
+    margin-top: 100px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Sidebar Styles */
+  .sidebar {
+    width: 350px;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  
+  .searchContainer {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .searchBox {
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 8px 15px;
+  }
+  
+  .searchIcon {
+    margin-right: 10px;
+    color: #666;
+  }
+  
+  .searchBox input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .contactsList {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .contactItem {
+    display: flex;
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    align-items: center;
+  }
+  
+  .contactItem:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .contactAvatar {
+    width: 50px;
+    height: 40px;
+    margin-right: 15px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .contactAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .contactInfo {
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .contactName {
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 5px;
+  }
+  
+  .contactMessage {
+    font-size: 13px;
+    color: #7f8c8d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .contactTime {
+    font-size: 12px;
+    color: #95a5a6;
+    align-self: flex-start;
+    margin-left: 10px;
+  }
+  
+  /* Chat Area Styles */
+  .chatArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #e6f2ff;
+  }
+  
+  .chatHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .chatTitle h2 {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .onlineStatus {
+    font-size: 13px;
+    color: #27ae60;
+  }
+  
+  .headerActions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchIconHeader, .menuIcon {
+    font-size: 20px;
+    margin-left: 20px;
+    color: #7f8c8d;
+    cursor: pointer;
+  }
+  
+  .messagesContainer {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .messageWrapper {
+    display: flex;
+    margin-bottom: 20px;
+    max-width: 80%;
+  }
+  
+  .messageWrapper.self {
+    align-self: flex-end;
+  }
+  
+  .messageAvatar {
+    width: 40px;
+    height: 30px;
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .messageAvatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .messageBubbleContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .messageSender {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+  }
+  
+  .messageBubble {
+    background-color: white;
+    border-radius: 18px;
+    padding: 12px 15px;
+    position: relative;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .self .messageBubble {
+    background-color: #1e88e5;
+    color: white;
+  }
+  
+  .messageBubble p {
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 0;
+  }
+  
+  .messageTime {
+    font-size: 11px;
+    color: #95a5a6;
+    text-align: right;
+    margin-top: 5px;
+  }
+  
+  .self .messageTime {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .messageInputContainer {
+    padding: 15px;
+    background-color: white;
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .messageInput {
+    flex: 1;
+    border: none;
+    background-color: white;
+    padding: 12px 15px;
+    font-size: 14px;
+    outline: none;
+  }
+  
+  .sendButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sendIcon {
+    font-size: 16px;
+  }
