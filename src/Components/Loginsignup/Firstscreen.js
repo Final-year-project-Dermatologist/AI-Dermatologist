@@ -1,9 +1,10 @@
+
 import styles from './Firstscreen.module.css';
 import user from '../../assets/user.png';
 import doctor from '../../assets/doctor1.png';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function Firstscreen() {
     const navigate = useNavigate();
     const [role, setRole] = useState(null);
@@ -38,10 +39,11 @@ function Firstscreen() {
                     </div>
                 </div>
 
-                <button onClick={handleCreateAccount}>Create Account</button>
-                <div>
-                    Already have an account? <a href="/Login">Login</a>
-                </div>
+                <button className={styles.btn} onClick={handleCreateAccount} disabled={!role}>Create Account</button>
+                <Link to="/Login" className={styles.mylink}>
+                    <span >Already have an account? </span>
+                    <span >Log In</span>
+                </Link>
             </div>
         </div>
     );
