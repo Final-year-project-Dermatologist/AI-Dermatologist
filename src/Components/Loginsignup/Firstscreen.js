@@ -5,6 +5,8 @@ import doctor from '../../assets/doctor1.png';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+
+
 function Firstscreen() {
     const navigate = useNavigate();
     const [role, setRole] = useState(null);
@@ -50,3 +52,5 @@ function Firstscreen() {
 }
 
 export default Firstscreen;
+
+

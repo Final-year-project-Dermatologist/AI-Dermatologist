@@ -1,12 +1,9 @@
 import styles from './Signup.module.css';
 import React, { useState } from 'react';
 import imageurl from '../../assets/signup.png';
-import googleurl from '../../assets/google.png';
-import {Routes, Route, Link, Router} from 'react-router-dom';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { supabase } from '../../supabase';
-
-
+import Modal from './Model'; 
 
 function Signup() {
     const navigate = useNavigate();
@@ -16,22 +13,16 @@ function Signup() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
-    //                          Handle sign up function
+    const [showPopup, setShowPopup] = useState(false); 
 
     const handleSignup = async (e) => {
         e.preventDefault();
 
-        //  password shold be of 8 characters with 1 cpital 1 digit and one special charcter
-
         const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
         if (!passwordRegex.test(password)) {
-           alert("Password must be at least 8 characters long and include one uppercase letter, one digit, and one special character.");
-           return;
+            alert("Password must be at least 8 characters long and include one uppercase letter, one digit, and one special character.");
+            return;
         }
-
-
-        //if role not selected
 
         if (!role) {
             alert("Role not selected.");
@@ -48,66 +39,67 @@ function Signup() {
             return;
         }
 
-        const userId = authData.user.id;
+        const userId = authData?.user?.id;
 
-        const { error: dbError } = await supabase.from('users').insert([{
-            id: userId,
-            name,
-            email,
-            role
-        }]);
+        if (userId) {
+            const { error: dbError } = await supabase.from('users').insert([{
+                id: userId,
+                name,
+                email,
+                role
+            }]);
 
-        if (dbError) {
-            alert("Signup successful, but failed to save profile.");
-        } else {
-            alert("Signup successful!");
+            if (dbError) {
+                alert("Signup successful, but failed to save profile.");
+            }
         }
 
-        navigate('/Login');
+        setShowPopup(true);
     };
-
-
-
-    
 
     return (
         <div className={styles.container}>
-
             <div className={styles.lefthalf}>
                 <h1>Welcome To AI Dermaotlogist</h1>
                 <p>Early skin diagnosis with AI-powered precision</p>
-                <img className={styles.image} src={imageurl} />
+                <img className={styles.image} src={imageurl} alt="signup" />
             </div>
+
             <div className={styles.righthalf}>
                 <h1 className={styles.loginheading}>Sign Up</h1>
-
-                {/* Form  */}
                 <form className={styles.form} onSubmit={handleSignup}>
-
-                <div className={styles.emaildiv}>
-                        <label className={styles.subheadings}>Name</label> <br></br>
-                        <input type='text' className={styles.inputfields} value={name} onChange={e => setName(e.target.value)}/>
-
-                    </div>
                     <div className={styles.emaildiv}>
-                        <label className={styles.subheadings}>email</label> <br></br>
-                        <input type='text' className={styles.inputfields} value={email} onChange={e => setEmail(e.target.value)} />
-
+                        <label className={styles.subheadings}>Name</label><br />
+                        <input type='text' className={styles.inputfields} value={name} onChange={e => setName(e.target.value)} required />
                     </div>
+
                     <div className={styles.emaildiv}>
-                        <label className={styles.subheadings}>Password</label> <br></br>
-                        <input type='password' className={styles.inputfields} value={password} onChange={e => setPassword(e.target.value)} /><br></br>
-
-                        
+                        <label className={styles.subheadings}>Email</label><br />
+                        <input type='email' className={styles.inputfields} value={email} onChange={e => setEmail(e.target.value)} required />
                     </div>
-                    <button className={styles.btn}  onClick={handleSignup}>SIGN UP</button>
-                    <Link to="/Login" className={styles.signup} >Already have account? <span>Login</span></Link>
 
-                    
+                    <div className={styles.emaildiv}>
+                        <label className={styles.subheadings}>Password</label><br />
+                        <input type='password' className={styles.inputfields} value={password} onChange={e => setPassword(e.target.value)} required />
+                    </div>
+
+                    <button className={styles.btn} type="submit">SIGN UP</button>
+                    <Link to="/Login" className={styles.signup}>Already have an account? <span>Login</span></Link>
                 </form>
             </div>
+
+            {showPopup && (
+                <Modal
+                    title="Confirm Your Email"
+                    message={`We've sent a confirmation link to ${email}. Please check your inbox.`}
+                    onClose={() => {
+                        setShowPopup(false);
+                        navigate('/Login');
+                    }}
+                />
+            )}
         </div>
-    )
+    );
 }
 
 export default Signup;
