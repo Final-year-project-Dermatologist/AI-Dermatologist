@@ -18,22 +18,46 @@ function Login() {
   
 
   const handleLogin = async (e) => {
-    e.preventDefault(); // prevent default form submit
-    setErrorMsg(''); // reset error
+  e.preventDefault(); // prevent default form submit
+  setErrorMsg(''); // reset error
 
-    const { data, error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    });
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
-    if (error) {
-      console.error("Sign-in error:", error.message);
-      setErrorMsg(error.message);
-    } else {
-      console.log("Login successful:", data);
-      navigate('/Home'); // navigate to home on success
-    }
-  };
+  if (error) {
+    console.error("Sign-in error:", error.message);
+    setErrorMsg(error.message);
+    return;
+  }
+
+  // Check user role from your 'users' table
+  const { data: userData, error: userError } = await supabase
+    .from('users')
+    .select('role')
+    .eq('email', email)
+    .single();
+
+  if (userError) {
+    console.error("User role fetch error:", userError.message);
+    setErrorMsg("Failed to fetch user role");
+    return;
+  }
+
+  // Redirect based on role
+  if (userData.role === 'admin') {
+    navigate('/Admin', {
+  state: {                              // pass email and password to admin to show
+    email: email,
+    password: password
+  }
+});
+
+  } else {
+    navigate('/Home'); // or wherever regular users should go
+  }
+};
 
   
   return (

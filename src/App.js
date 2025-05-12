@@ -12,6 +12,7 @@ import Profile from './Components/Dermatologistprofile/Profile';
 import Bookappointment from './Components/BookAppointment/Bookappointment';
 import Profilecreation from './Components/DoctorProfilecreation/Profilecreation';
 import Chat from './Components/Chat/Chat';
+import Admin from './Components/Admin/Admin';
 
 
 
@@ -19,7 +20,8 @@ function App() {
   return (
     <div>
       <Routes>
-      <Route path='/' element={<Firstscreen/>} />
+      <Route path='/' element={<Login/>} />
+      <Route path='/Admin' element={<Admin />} />
         <Route path='/Login' element={<Login />} />
         <Route path='/Signup' element={<Signup />} />
        <Route  path='/Password'  element={<Password />} />
