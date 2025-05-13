@@ -10,7 +10,7 @@ import Upload from './Components/Uploadphoto/Upload';
 import Listing from './Components/Dermatologistlisting/Listing';
 import Profile from './Components/Dermatologistprofile/Profile';
 import Bookappointment from './Components/BookAppointment/Bookappointment';
-import Profilecreation from './Components/DoctorProfilecreation/Profilecreation';
+import Profilecreation from './Components/DoctorProfilecreation/CreateProfile';
 import Chat from './Components/Chat/Chat';
 import Admin from './Components/Admin/Admin';
 
