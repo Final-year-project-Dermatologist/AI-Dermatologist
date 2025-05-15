@@ -1,0 +1,129 @@
+.form {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 120px;
+  }
+  
+  .form >h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: #1a1a3c;
+  }
+  
+  .input, .textarea, .fileInput {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    
+  }
+
+  .input{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+   
+  }
+  
+  .textarea {
+    height: 120px;
+    resize: vertical;
+  }
+  
+  .fileLabel {
+    display: block;
+    background: #e0e7ff;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .fileInput {
+    display: none;
+  }
+  
+  .photoUploadSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+  }
+  
+  .avatar {
+    width: 60px;
+    height: 60px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+  
+  .uploadButton {
+    padding: 0.5rem 1rem;
+    background-color: #00c851;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .submitButton {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #4a2fed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+
+  .uploadContainer {
+    display: flex;
+    flex-direction: column;
+  margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+  margin-left: -20px;
+  }
+  
+  .uploadLabel {
+    font-size: 15px;
+    font-weight: 430;
+    margin-bottom: 2px;
+  }
+  
+  .fileLabel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #d9d9ff; /* Light purple as in the image */
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .uploadIcon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .fileInput {
+    /* display: none; */
+    height: 20px;
+  }
+  

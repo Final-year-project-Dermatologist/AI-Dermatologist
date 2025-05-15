@@ -1,4 +1,4 @@
-
+/* 
 .Navcontainer{
     left :0;
     top: 0;
@@ -29,7 +29,91 @@
     color: #212C67;
     font-weight: bold;
 }
+ */
 
+ .header {
+    background-color: #28306f;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -45px; 
+    width: 100%; 
+    z-index: 1000; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .logo{
+    width: 155px;
+    height: 70px;
+    border: 3px solid #e96f51;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #28306f;
+    font-weight: bold;
+    background-color:white;
+}
+  
+ 
+  
+  .navLinks a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+  }
+  
+  .authSection {
+    display: flex;
+    
+    align-items: center;
+    
+  }
 
-
-
+  .buttonGroup {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+  
+  .userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .authButton {
+    background-color: white;
+    color: #28306f;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 80px;
+    height: 35px;
+    font-size: 15px;
+  }
+  
+  .authButton:hover {
+    background-color: #ddd;
+  }
+  
+  .profilePic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+  }
+  
+  .username {
+    font-weight: 500;
+  }
+  

@@ -31,7 +31,10 @@ function Signup() {
 
         const { data: authData, error: authError } = await supabase.auth.signUp({
             email,
-            password
+            password,
+            // options: {
+            //     emailRedirectTo: 'http://localhost:3000/Login'
+            //   }
         });
 
         if (authError) {

@@ -10,16 +10,13 @@ function Login() {
 
   const navigate = useNavigate();
 
-
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMsg, setErrorMsg] = useState('');
   
-
   const handleLogin = async (e) => {
-    e.preventDefault(); // prevent default form submit
-    setErrorMsg(''); // reset error
+    e.preventDefault(); 
+    setErrorMsg('');
 
     const { data, error } = await supabase.auth.signInWithPassword({
       email,
@@ -31,7 +28,7 @@ function Login() {
       setErrorMsg(error.message);
     } else {
       console.log("Login successful:", data);
-      navigate('/Home'); // navigate to home on success
+      navigate('/ProfileDraft'); // navigate to home on success
     }
   };
 
