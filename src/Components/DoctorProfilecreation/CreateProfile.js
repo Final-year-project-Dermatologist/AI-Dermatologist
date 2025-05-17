@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CreateProfile.css';
+import styles from './CreateProfile.module.css';
 
 export default function CreateProfile() {
   const [formData, setFormData] = useState({
@@ -72,7 +72,7 @@ export default function CreateProfile() {
   };
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
+    <form className={styles.formContainer} onSubmit={handleSubmit}>
       <h1>Create your profile</h1>
 
       <input type="text" placeholder="Enter your Full Name" name="name" onChange={handleChange} />
@@ -98,7 +98,7 @@ export default function CreateProfile() {
       <input type="text" placeholder="Enter your PMC Registration number" />
 
       {/* File uploads with validation */}
-      <div className="file-upload">Upload PMC Registration Certificate
+      <div className={styles.fileUpload}>Upload PMC Registration Certificate
         <label>
           <input type="file" onChange={(e) => handleFileChange(e, 'pmcCert')} />
           <span>Add a File</span>
@@ -106,7 +106,7 @@ export default function CreateProfile() {
         {errors.pmcCert && <p style={{ color: 'red' }}>{errors.pmcCert}</p>}
       </div>
 
-      <div className="file-upload">Upload House Job/Experience Certificate
+      <div className={styles.fileUpload}>Upload House Job/Experience Certificate
         <label>
           <input type="file" onChange={(e) => handleFileChange(e, 'experienceCert')} />
           <span>Add a File</span>
@@ -114,7 +114,7 @@ export default function CreateProfile() {
         {errors.experienceCert && <p style={{ color: 'red' }}>{errors.experienceCert}</p>}
       </div>
 
-      <div className="file-upload">Upload CNIC Front side Image
+      <div className={styles.fileUpload}>Upload CNIC Front side Image
         <label>
           <input type="file" onChange={(e) => handleFileChange(e, 'cnicFront')} />
           <span>Upload image</span>
@@ -122,7 +122,7 @@ export default function CreateProfile() {
         {errors.cnicFront && <p style={{ color: 'red' }}>{errors.cnicFront}</p>}
       </div>
 
-      <div className="file-upload">Upload CNIC back side Image
+      <div className={styles.fileUpload}>Upload CNIC back side Image
         <label>
           <input type="file" onChange={(e) => handleFileChange(e, 'cnicBack')} />
           <span>Upload image</span>
@@ -130,7 +130,7 @@ export default function CreateProfile() {
         {errors.cnicBack && <p style={{ color: 'red' }}>{errors.cnicBack}</p>}
       </div>
 
-      <div className="file-upload">Upload Your scanned picture
+      <div className={styles.fileUpload}>Upload Your scanned picture
         <label>
           <input type="file" onChange={(e) => handleFileChange(e, 'picture')} />
           <span>Upload image</span>
@@ -138,7 +138,7 @@ export default function CreateProfile() {
         {errors.picture && <p style={{ color: 'red' }}>{errors.picture}</p>}
       </div>
 
-      <button type="submit" className="submit-button">Submit your profile</button>
+      <button type="submit" className={styles.submitButton}>Submit your profile</button>
     </form>
   );
 }

@@ -13,6 +13,11 @@ import Bookappointment from './Components/BookAppointment/Bookappointment';
 import Profilecreation from './Components/DoctorProfilecreation/CreateProfile';
 import Chat from './Components/Chat/Chat';
 import Admin from './Components/Admin/Admin';
+import NewRequest from './Components/Admin/NewRequest';
+import ApprovedRequest from './Components/Admin/ApprovedRequest';
+import Details from './Components/Admin/Details';
+
+
 
 
 
@@ -20,8 +25,11 @@ function App() {
   return (
     <div>
       <Routes>
-      <Route path='/' element={<Login/>} />
-      <Route path='/Admin' element={<Admin />} />
+      <Route path='/' element={<Home/>} />
+       <Route path='/Details' element={<Details/>} />
+      <Route path='/Admin' element={ <Admin /> } />  {/* admin page should be acceible only after login*/}
+       <Route path='/NewRequest' element={ <NewRequest /> } />
+       <Route path='/ApprovedRequest' element={ <ApprovedRequest /> } />
         <Route path='/Login' element={<Login />} />
         <Route path='/Signup' element={<Signup />} />
        <Route  path='/Password'  element={<Password />} />

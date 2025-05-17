@@ -70,7 +70,7 @@ function Login() {
         <form  className={styles.form} onSubmit={handleLogin}>
 
           <div className={styles.emaildiv}>
-            <label className={styles.subheadings}>email</label> <br></br>
+            <label className={styles.subheadings}>Email</label> <br></br>
             <input type='text' className={styles.inputfields} value={email}
               onChange={(e) => setEmail(e.target.value)}/>
 

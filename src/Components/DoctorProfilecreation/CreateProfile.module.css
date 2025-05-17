@@ -4,7 +4,7 @@ body {
   padding: 20px;
 }
 
-.form-container {
+.formContainer {
   max-width: 600px;
   margin: auto;
   background: white;
@@ -35,7 +35,7 @@ textarea {
   height: 100px;
 }
 
-.file-upload {
+.fileUpload {
   background: #e0e6ff;
   padding: 10px;
   border-radius: 6px;
@@ -43,17 +43,17 @@ textarea {
   font-size: 14px;
 }
 
-.file-upload label {
+.fileUpload label {
   display: block;
   cursor: pointer;
   margin-top: 8px;
 }
 
-.file-upload input[type="file"] {
+.fileUpload input[type="file"] {
   display: none;
 }
 
-.file-upload span {
+.fileUpload span {
   display: inline-block;
   background: #fff;
   padding: 8px 12px;
@@ -63,7 +63,7 @@ textarea {
   border: 1px solid #ccc;
 }
 
-.upload-picture {
+.uploadPicture {
   display: flex;
   align-items: center;
   margin: 20px 0;
@@ -77,7 +77,7 @@ textarea {
   margin-right: 20px;
 }
 
-.upload-photo {
+.uploadPhoto {
   padding: 10px 15px;
   border: 2px solid #28c76f;
   border-radius: 8px;
@@ -87,7 +87,7 @@ textarea {
   cursor: pointer;
 }
 
-.submit-button {
+.submitButton {
   background: #5f4bdb;
   color: white;
   padding: 12px;
@@ -99,6 +99,6 @@ textarea {
   margin-top: 10px;
 }
 
-.submit-button:hover {
+.submitButton:hover {
   background: #4834d4;
 }
