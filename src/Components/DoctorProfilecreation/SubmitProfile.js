@@ -1,80 +1,40 @@
-
 import { supabase } from '../../supabase';
 
+export const submitProfileToSupabase = async (formData, uploadFiles, userId) => {
+  const timestamp = Date.now();
 
-const uploadFile = async (file, pathPrefix) => {
-   
-    if (!file) {
-        console.error("No file provided.");
-        return null;  // Return null or handle as needed
-    }
-    // file.name;
-    const fileName =  Date.now()-file.name;
-    const fileExt = fileName.split('.').pop();  // This line will work safely now
-    const filePath = `${pathPrefix}/${Date.now()}.${fileExt}`;
-
-    const { error: uploadError } = await 
-    supabase.storage
-        .from('profileuploads')
-        .upload(filePath, file);
-
-    if (uploadError) {
-        console.error("Upload error:", uploadError);
-        return null;
-    }
-
-    const { data: publicUrlData } = supabase
-        .storage
-        .from('profileuploads')
-        .getPublicUrl(filePath);
-
-    return publicUrlData.publicUrl;
-
-   
-};
-
-
-export const SubmitProfile = async ({ formData, files, photo }) => {
-    const {
-        data: { user },
-        error: userError
-    } = await supabase.auth.getUser();
-
-    if (userError || !user) {
-        return { success: false, message: "User not authenticated" };
-    }
-  
-    // Upload each file
-    const pmcUrl = await uploadFile(files.pmcCertificate, `certificates/${user.id}`);
-    const houseJobUrl = await uploadFile(files.houseJobCertificate, `certificates/${user.id}`);
-    const cnicFrontUrl = await uploadFile(files.cnicFront, `cnic/${user.id}`);
-    const cnicBackUrl = await uploadFile(files.cnicBack, `cnic/${user.id}`);
-    const photoUrl = await uploadFile(photo, `avatars/${user.id}`);
-
-    // Insert record in Supabase table
-    const { error } = await supabase
-        .from('ProfileforApproval')
-        .insert([{
-            id: user.id,
-            name: formData.name,
-            gender: formData.gender,
-            experience: formData.experience,
-            email: formData.email,
-            phone: formData.phone,
-            cnic: formData.cnic,
-            specialization: formData.specialization,
-            clinicLocation: formData.location,
-            pmcCertificateUrl: pmcUrl,
-            housejobCertUrl: houseJobUrl,
-            cnicFrontUrl: cnicFrontUrl,
-            cnicBackUrl: cnicBackUrl,
-            photoUrl: photoUrl
-        }]);
-
+  const uploadToStorage = async (file, label) => {
+    const filePath = `profiles/${timestamp}_${label}`;
+    const { data, error } = await supabase.storage
+      .from('profileuploads')
+      .upload(filePath, file);
     if (error) {
-        console.error("Insert error:", error);
-        return { success: false, message: "Failed to submit profile" };
+      console.error(`Error uploading ${label}:`, error.message);
+      return null;
     }
+    const { data: publicUrlData } = supabase
+      .storage
+      .from('profileuploads')
+      .getPublicUrl(filePath);
+    return publicUrlData.publicUrl;
+  };
 
-    return { success: true, message: "Profile submitted successfully!" };
+  const pmcCertificateUrl = await uploadToStorage(uploadFiles.pmcCertificate, 'pmc_certificate');
+  const housejobCertUrl = await uploadToStorage(uploadFiles.houseJobCertificate, 'house_job_certificate');
+  const cnicFrontUrl = await uploadToStorage(uploadFiles.cnicFront, 'cnic_front');
+  const cnicBackUrl = await uploadToStorage(uploadFiles.cnicBack, 'cnic_back');
+  const photoUrl = await uploadToStorage(uploadFiles.profilePhoto, 'profile_photo');
+
+  const { error } = await supabase.from('ProfileforApproval').insert([{
+    ...formData,
+    id: userId,
+    approvalStatus:"pending",
+    pmcCertificateUrl,
+    housejobCertUrl,
+    cnicFrontUrl,
+    cnicBackUrl,
+    photoUrl
+  }]);
+
+  return error;
 };

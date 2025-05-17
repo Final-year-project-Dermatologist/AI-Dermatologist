@@ -28,7 +28,7 @@ function Login() {
       setErrorMsg(error.message);
     } else {
       console.log("Login successful:", data);
-      navigate('/ProfileDraft'); // navigate to home on success
+      navigate('/'); // navigate to home on success
     }
   };
 
